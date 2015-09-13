@@ -2,10 +2,11 @@ class Team:
     id = false;
     name = ""
     members = []
+    shows = []
 
-    #getFromDB
-    def getFromDB (id):
+    def __init__(id, name):
         self.id = id
-    /#getFromDB
+        self.name = name
+    #/__init__
 
 #/Team

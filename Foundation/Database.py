@@ -25,7 +25,6 @@ class Database:
         #}
         query_cursor = self.conn.cursor()
         result = query_cursor.execute(query, params)
-        return result
     #/executeQuery
 
 #/Database
