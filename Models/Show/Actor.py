@@ -1,17 +1,6 @@
-class Team(Database.Model):
+class Actor(Database.Model):
     id = Database.Column(Database.integer, primary_key = true)
-    name =  Database.Column(Database.String(200))
+    team_id = Database.Column(Database.integer)
+    person_id = Database.Column(Database.integer)
     create_date = Database.Column(Database.DateTime, nullable=False, default=datetime.datetime.utcnow)
     update_date = Database.Column(Database.DateTime, nullable=False, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
-
-    members[]
-
-    def __init__(self, name):
-        self.name = name
-    #/__init__
-
-    def __repr__(self):
-        return self.name
-    #/__repr__
-
-#/Team
