@@ -4,10 +4,9 @@ class Team(Database.Model):
     create_date = Database.Column(Database.DateTime, nullable=False, default=datetime.datetime.utcnow)
     update_date = Database.Column(Database.DateTime, nullable=False, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
 
-    members = [:]
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
+        self.members = getMembers()
     #/__init__
 
     def __repr__(self):
