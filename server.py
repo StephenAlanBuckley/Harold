@@ -8,5 +8,5 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 Database = SQLAlchemy(app)
 
 @app.route('/')
-def hello():
-    return 'yooooo'
+def homepage():
+    return "Hello, I'm Harold"
