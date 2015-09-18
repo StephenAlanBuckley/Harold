@@ -4,7 +4,7 @@ class Team(Database.Model):
     create_date = Database.Column(Database.DateTime, nullable=False, default=datetime.datetime.utcnow)
     update_date = Database.Column(Database.DateTime, nullable=False, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
 
-    members[]
+    members = [:]
 
     def __init__(self, name):
         self.name = name
@@ -13,5 +13,8 @@ class Team(Database.Model):
     def __repr__(self):
         return self.name
     #/__repr__
+
+    def getMembers():
+        self.members = Team_Member.query.filter(Team_Member.team_id == self.id)
 
 #/Team
