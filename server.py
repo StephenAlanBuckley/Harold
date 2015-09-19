@@ -13,5 +13,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = dev_connect_string
 
 Database = SQLAlchemy(app)
 @app.route('/')
-def Harold_Homepage(args):
-    return "Hello! I'm Harold."
+def Harold_Homepage(environ, start_response):
+      data = "Hello, World!\n"
+      start_response("200 OK", [
+          ("Content-Type", "text/plain"),
+          ("Content-Length", str(len(data)))
+      ])
+      return iter([data])
