@@ -20,3 +20,6 @@ def Harold_Homepage(environ, start_response):
           ("Content-Length", str(len(data)))
       ])
       return iter([data])
+
+if __name__ == "__main__":
+      app.run()
