@@ -1,1 +1,1 @@
-web: gunicorn Harold_Homepage:app --log-file=-
+web: gunicorn server:app --log-file=-

@@ -14,6 +14,9 @@ class Team(Database.Model):
     #/__repr__
 
     def getMembers():
-        self.members = Team_Member.query.filter(Team_Member.team_id == self.id)
+        members = Team_Member.query.filter(Team_Member.team_id == self.id)
+        return members
+    #/getMembers
+
 
 #/Team
