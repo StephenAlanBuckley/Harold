@@ -4,9 +4,7 @@ from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-dev_connect_string = "postgresql://localhost/sbuckley"
-#/ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-app.config['SQLALCHEMY_DATABASE_URI'] = dev_connect_string
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 # Gotta figure out how to have Config objects at some point
 #/ app.config.from_object(os.environ['APP_SETTINGS'])
 #/ print(os.environ['APP_SETTINGS'])
@@ -22,4 +20,4 @@ def Harold_Homepage(environ, start_response):
       return iter([data])
 
 if __name__ == "__main__":
-      app.run()
+      app.run(host='0.0.0.0')
