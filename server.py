@@ -4,12 +4,10 @@ from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-# Gotta figure out how to have Config objects at some point
-#/ app.config.from_object(os.environ['APP_SETTINGS'])
-#/ print(os.environ['APP_SETTINGS'])
-
+app.config.from_object(os.environ['APP_SETTINGS'])
+print(os.environ['APP_SETTINGS'])
 Database = SQLAlchemy(app)
+
 @app.route('/')
 def Harold_Homepage(environ, start_response):
       data = "Hello, World!\n"
