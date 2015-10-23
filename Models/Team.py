@@ -1,8 +1,14 @@
-class Team(Database.Model):
-    id = Database.Column(Database.integer, primary_key = true)
-    name =  Database.Column(Database.String(200))
-    create_date = Database.Column(Database.DateTime, nullable=False, default=datetime.datetime.utcnow)
-    update_date = Database.Column(Database.DateTime, nullable=False, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
+import datetime
+from BaseModel import BaseModel
+from Models.Team.Member import Team_Member
+from server import db
+
+class Team(BaseModel, db.Model):
+    __tablename__ = __name__
+    id = db.Column(db.integer, primary_key = true)
+    name =  db.Column(db.String(200))
+    create_date = db.Column(db.DateTime, nullable=False, default=datetime.datetime.utcnow)
+    update_date = db.Column(db.DateTime, nullable=False, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
 
 
     def __init__(self):
@@ -17,6 +23,5 @@ class Team(Database.Model):
         members = Team_Member.query.filter(Team_Member.team_id == self.id)
         return members
     #/getMembers
-
 
 #/Team

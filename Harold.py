@@ -1,3 +1,5 @@
+from Models.Team import Team
+
 class Harold:
   def __init__(self):
       self.Philosophy = "Frame, Heighten, Explore. Team First, Can't Lose!"
@@ -35,7 +37,7 @@ class Harold:
       upcoming_show_ids = []
       for my_performance in all_my_performances:
           my_show_id = my_performance.show_id
-          my_show = Show.query.filter(Show.id = my_show_id)
+          my_show = Show.query.filter(Show.id == my_show_id)
           if my_show.time > now:
               upcoming_show_ids.append(my_show_id)
           #/if
@@ -43,9 +45,14 @@ class Harold:
       return upcoming_show_ids
   #/getMyUpcomingImprovShows
 
-  def createNewTeam(name):
-      my_team = new Team
+  ######################################
+  # Creates a team and returns its id  #
+  ######################################
+  def createNewTeam(name, second):
+      my_team = Team()
       my_team.name = name
+      my_team.save()
+      return my_team.id
   #/createNewTeam
 
 #/Harold
