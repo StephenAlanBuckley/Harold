@@ -1,5 +1,5 @@
-from Models.Team import Team
-from Models.User import User
+import Models.Team
+import Models.User
 
 class Harold:
   def __init__(self, db):
