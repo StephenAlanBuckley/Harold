@@ -11,6 +11,7 @@ app.config.from_object(os.environ['APP_SETTINGS'])
 @app.route('/')
 def Harold_Homepage():
     har = Harold();
+    return "<strong>Did It</strong>"
 
 if __name__ == "__main__":
       port = int(os.environ.get('PORT', 5000))
