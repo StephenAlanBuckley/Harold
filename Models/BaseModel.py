@@ -7,7 +7,7 @@
 class BaseModel():
     #/ Saves the modified class to the Database
     def save():
-        if Database is not None:
+        if db is not None:
             Database.session.add(self)
             Database.session.commit()
         #/if
