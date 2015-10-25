@@ -2,6 +2,7 @@ import os
 import psycopg2
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
+from Harold import Harold
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
