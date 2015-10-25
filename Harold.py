@@ -2,7 +2,7 @@ import Models.Team
 import Models.User
 
 class Harold:
-  def __init__(self, db):
+  def __init__(self):
       self.Philosophy = "Frame, Heighten, Explore. Team First, Can't Lose!"
       self.Author = "Stephen Buckley"
       # =================================================================== #
@@ -16,7 +16,6 @@ class Harold:
       # =================================================================== #
       self.logged_in = False
       self.user = None
-      self.db = db
   #/__init__
 
   def loginAsUser(login_id):
